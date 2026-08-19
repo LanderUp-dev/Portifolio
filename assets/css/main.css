@@ -4,7 +4,7 @@
 * Updated: Aug 19 2025 with Bootstrap v5.3.7
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
-*/
+*/rtrt
 
 /*--------------------------------------------------------------
 # Font & Color Variables
@@ -1087,21 +1087,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Portfolio Cards - Ajustados para Imagens Longas (100% Sem Padding)
+# Portfolio Cards - Ajustados para Imagens Longas
 --------------------------------------------------------------*/
-/* Ajuste do Grid para deixar os cards maiores */
-.portfolio-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
-  gap: 40px;
-  height: auto !important;
-}
-
-.portfolio-item {
-  position: static !important;
-  width: 100% !important;
-  margin-bottom: 0 !important;
-}
 
 /* O Card Principal */
 .portfolio .portfolio-card {
@@ -1111,8 +1098,7 @@ section,
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
-  height: auto;
-  /* Remove altura fixa ou 100% para expandir para baixo */
+  height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -1122,34 +1108,28 @@ section,
   border-color: var(--accent-color);
 }
 
-/* Container da Imagem - Sem altura fixa, expande para baixo */
+/* Container da Imagem */
 .portfolio .image-container {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: auto;
-  /* Deixa o contêiner crescer */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  /* Pequena separação da imagem para o texto */
 }
 
-/* Imagem 100% visível, preenchendo a largura e expandindo a altura */
+/* Imagem 100% visível */
 .portfolio .image-container img {
   width: 100%;
-  /* Preenche a largura do card */
   height: auto;
-  /* Permite que a imagem mostre 100% da altura natural */
   display: block;
-  /* Object-fit removido, não é mais necessário controlar o corte/encaixe */
   transition: transform 0.6s ease;
 }
 
 .portfolio .portfolio-card:hover .image-container img {
   transform: scale(1.03);
-  /* Zoom leve */
 }
 
-/* O Overlay verde no Hover - Cobre toda a área visível da imagem longa */
+/* Overlay no Hover */
 .portfolio .image-container .overlay {
   position: absolute;
   inset: 0;
@@ -1168,7 +1148,7 @@ section,
   visibility: visible;
 }
 
-/* Botão/Ícone central do Overlay */
+/* Botão/Ícone do Overlay */
 .portfolio .image-container .overlay-content a {
   width: 60px;
   height: 60px;
@@ -1193,12 +1173,11 @@ section,
   transform: scale(1.1);
 }
 
-/* Textos centralizados no final do card */
+/* Textos no final do card */
 .portfolio .content {
   padding: 30px 20px;
   text-align: center;
   margin-top: auto;
-  /* Empurra o texto para o final do card se a imagem for menor */
 }
 
 .portfolio .content h3 {
@@ -1220,7 +1199,7 @@ section,
   margin: 0;
 }
 
-/* Media Queries corrigidas para não espremer os cards */
+/* Filtros */
 @media (max-width: 768px) {
   .portfolio .portfolio-filters {
     flex-wrap: wrap;
@@ -1228,22 +1207,6 @@ section,
     justify-content: center;
   }
 }
-
-@media (min-width: 992px) {
-  .portfolio .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 colunas para monitores médios */
-  }
-}
-
-@media (min-width: 1200px) {
-  .portfolio .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-    /* Máximo de 3 colunas em telas grandes */
-    gap: 50px;
-  }
-}
-
 
 /*--------------------------------------------------------------
 # About Section
