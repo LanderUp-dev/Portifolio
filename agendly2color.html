@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Agendly - Em Breve</title>
+    
+    <link href="assets/img/favicon.png" rel="icon">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Variáveis de Cores */
+        :root {
+            --bg-color: #070708; /* Mesmo fundo do portfólio */
+            --surface-color: #1f1f23;
+            --text-main: rgba(255, 255, 255, 0.8);
+            --text-light: #ffffff;
+            
+            /* Cores estilo Google */
+            --g-blue: #4285F4;
+            --g-red: #EA4335;
+            --g-yellow: #FBBC05;
+            --g-green: #34A853;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Container Central */
+        .coming-soon-container {
+            background: var(--surface-color);
+            padding: 60px 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+        /* Efeito de brilho de fundo */
+        .coming-soon-container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(66, 133, 244, 0.05), transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* A "Rodinha Girando" com Cores do Google */
+        .google-spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 6px solid transparent;
+            border-top-color: var(--g-blue);
+            border-right-color: var(--g-red);
+            border-bottom-color: var(--g-yellow);
+            border-left-color: var(--g-green);
+            margin: 0 auto 40px auto;
+            animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Textos */
+        .brand-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            /* Texto com gradiente colorido */
+            background: linear-gradient(90deg, var(--g-blue), var(--g-red), var(--g-yellow), var(--g-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Botão de Voltar */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            background: transparent;
+            color: var(--text-light);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-back i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-back:hover {
+            border-color: var(--g-blue);
+            background: rgba(66, 133, 244, 0.1);
+            color: var(--g-blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-back:hover i {
+            transform: translateX(-5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 576px) {
+            .brand-title {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .coming-soon-container {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="coming-soon-container">
+        <div class="google-spinner"></div>
+        
+        <h1 class="brand-title">Agendly</h1>
+        <h2 class="subtitle">Em breve...</h2>
+        
+        <p class="description">
+            Estamos finalizando os últimos detalhes da plataforma que vai revolucionar a gestão da sua agenda. Fique ligado!
+        </p>
+
+        <a href="index.html#agendly" class="btn-back">
+            <i class="bi bi-arrow-left"></i> Voltar ao Portfólio
+        </a>
+    </div>
+
+</body>
+</html>
